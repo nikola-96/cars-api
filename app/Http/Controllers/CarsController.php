@@ -35,7 +35,7 @@ class CarsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CarRequest $request)
     {
         $car = new Car();
 
@@ -82,10 +82,10 @@ class CarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CarRequest $request, $id)
     {
         $car = Car::find($id);
-        
+
         $car->brand = $request->input('brand');
         $car->model = $request->input('model');
         $car->year = $request->input('year');
